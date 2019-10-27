@@ -12,6 +12,7 @@
 /login/login.jsp
 /login/admin.php
 /login/admin.jsp
+/flag/flag.txt
 /dede
 /admin
 /edit
