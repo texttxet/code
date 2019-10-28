@@ -1,6 +1,4 @@
 #! /bin/bash
-mkdir -p $HOME/src
-mkdir -p $HOME/static
 v=1.4.18
 cd $HOME/src
 wget http://ftp.gnu.org/gnu/m4/m4-${v}.tar.gz
