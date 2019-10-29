@@ -1,0 +1,2 @@
+发现0e以后是纯数字，就是考PHP弱类型了，payload为
+password=240610708或者QNKCDZO 
