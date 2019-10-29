@@ -23,6 +23,6 @@ def getcrc():
 	print(hex(crc))
 	jisuancrc(crc)
 
-dic = "abcdefghijklmnopqrst1234567890" # 可以自己自定义文件内容范围
+dic = "abcdefghijklmnopqrst1234567890" # 可以自己自定义文件内容范围可打印字符
 # dic = string.ascii_letters + string.digits # 直接应用模块来确定文件内容范围
 getcrc()
