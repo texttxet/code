@@ -32,30 +32,30 @@ ip_num = len(ip_list)
 result_num = math.ceil(ip_num / ths)
 flag = 0
 for line in ip_list:
-		flag += 1
-		ip = temp_ip + str(line)
-		temp_ip_list.append(ip)
-		if flag == result_num:
-				flag = 0
-				final_ip_list.append(temp_ip_list)
-				temp_ip_list = []
+	flag += 1
+	ip = temp_ip + str(line)
+	temp_ip_list.append(ip)
+	if flag == result_num:
+		flag = 0
+		final_ip_list.append(temp_ip_list)
+		temp_ip_list = []
 final_ip_list.append(temp_ip_list)
 
 # @pysnooper.snoop()
 def scan(thread_ip_list):
-		for ip in thread_ip_list:
-				cmd = "ping -c 6 " + str(ip)
-				# print (cmd)
-				ping = os.popen(cmd).read()
-				if "ttl" in ping:
-						print ("ip is alive: " + str(ip))
-				else:
-						continue
+	for ip in thread_ip_list:
+		cmd = "ping -c 6 " + str(ip)
+		# print (cmd)
+		ping = os.popen(cmd).read()
+		if "ttl" in ping:
+			print ("ip is alive: " + str(ip))
+		else:
+			continue
 
 ths_list = []
 for thread_ip_list in final_ip_list:
-		ths_list.append(threading.Thread(target = scan, args = (thread_ip_list, )))
+	ths_list.append(threading.Thread(target = scan, args = (thread_ip_list, )))
 for th in ths_list:
-		th.start()
+	th.start()
 
 
