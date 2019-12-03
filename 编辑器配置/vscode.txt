@@ -1,0 +1,16 @@
+{
+    "workbench.colorTheme": "Monokai Dimmed"
+    "vim.handleKeys":{
+        "<C-d>":true
+    }
+
+    "vim.insertModeKeyBindings":[
+        {
+            "before":["j","j"],
+            "after":["<Esc>"]
+        }　// vim　的简单配置
+    ]
+
+    "window.titleBarStyle": "custom" //deepin 下去掉vscode的大额头
+
+}
